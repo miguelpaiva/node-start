@@ -8,11 +8,20 @@ const resultadoMultiplicacao = matematica.multiplicar();
 const resultadoDivisao = matematica.dividir();
 const resultadoFibonacci = matematica.calcularFibonacci(6);
 
-const resultadoOrdenacao = matematica.ordenarArray([4, 3, 2, 5, 1]);
-const resultadoOrdenacaoInv = matematica.ordenarArrayInv([4, 3, 2, 5, 1]);
+const resultadoOrdenacao = matematica.ordenarArray(
+  matematica.geraRandomArray(5)
+);
+const resultadoOrdenacaoInv = matematica.ordenarArrayInv(
+  matematica.geraRandomArray(7)
+);
 
 const resultadoPalavra = matematica.ordenarPalavra("lucas");
-//const resultadoPalavra = matematica.ordenarPalavra([3, 5, 2, 1, 4]);
+
+const resultadoParImpar = matematica.retornarNumerosParesImapares(
+  matematica.geraRandomArray(15)
+);
+
+// matematica.getUserGithub();
 
 module.exports = {
   resultadoSoma,
@@ -23,5 +32,5 @@ module.exports = {
   resultadoOrdenacao,
   resultadoOrdenacaoInv,
   resultadoPalavra,
-  //testestringarray,
+  resultadoParImpar,
 };

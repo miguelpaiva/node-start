@@ -1,4 +1,4 @@
-{
+  {
   "name": "node-start",
   "version": "1.0.0",
   "main": "index.js",
@@ -8,5 +8,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "axios": "^0.21.0"
   }
 }

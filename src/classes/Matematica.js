@@ -1,3 +1,4 @@
+const axios = require("axios").default;
 class Matematica {
   constructor(num1, num2) {
     this.num1 = num1;
@@ -101,6 +102,49 @@ class Matematica {
       array.push(letra);
     }
     return array;
+  }
+
+  geraRandomNum() {
+    let numRandom = parseInt(Math.random() * 100);
+    return numRandom;
+  }
+
+  geraRandomArray(quantidadeNum) {
+    let randomArray = [];
+    for (let cont = 0; cont < quantidadeNum; cont++) {
+      randomArray.push(this.geraRandomNum());
+    }
+    return randomArray;
+  }
+
+  retornarNumerosParesImapares(listaNumeros) {
+    const tamanhoArray = listaNumeros.length;
+    let arrayPares = [],
+      arrayImpares = [];
+
+    for (let index = 0; index < tamanhoArray; index++) {
+      let elementoVerificacao = listaNumeros[index];
+      if (elementoVerificacao % 2 == 0) {
+        arrayPares.push(elementoVerificacao);
+      } else {
+        arrayImpares.push(elementoVerificacao);
+      }
+    }
+    return {
+      arrayPares,
+      arrayImpares,
+    };
+  }
+
+  getUserGithub() {
+    axios
+      .get("https://api.github.com/users/miguelpaiva")
+      .then((response) => {
+        console.log(response.data.login);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 }
 
