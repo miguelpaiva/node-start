@@ -45,13 +45,13 @@ class Matematica {
     let tamanhoArray = listaNumeros.length;
 
     for (let posicao = 0; posicao < tamanhoArray - 1; posicao++) {
-      let elemento = listaNumeros[posicao];
+      let elementoAtual = listaNumeros[posicao];
       for (let index = posicao + 1; index < tamanhoArray; index++) {
         let elementoComparacao = listaNumeros[index];
-        if (elementoComparacao < elemento) {
+        if (elementoComparacao < elementoAtual) {
           listaNumeros[posicao] = elementoComparacao;
-          listaNumeros[index] = elemento;
-          elemento = elementoComparacao;
+          listaNumeros[index] = elementoAtual;
+          elementoAtual = elementoComparacao;
         }
       }
     }
@@ -62,11 +62,12 @@ class Matematica {
     const tamanhoArray = listaNumeros.length;
 
     for (let posicao = 0; posicao < tamanhoArray - 1; posicao++) {
-      let letraAtual = listaNumeros[posicao];
+      let elementoAtual = listaNumeros[posicao];
       for (let index = posicao + 1; index < tamanhoArray; index++) {
-        if (listaNumeros[posicao] < listaNumeros[index]) {
-          listaNumeros[posicao] = listaNumeros[index];
-          listaNumeros[index] = letraAtual;
+        let elementoComparacao = listaNumeros[index];
+        if (elementoAtual < elementoComparacao) {
+          listaNumeros[posicao] = elementoComparacao;
+          listaNumeros[index] = elementoAtual;
         }
       }
     }
@@ -76,15 +77,16 @@ class Matematica {
   // [l,u,c,a,s] ---- [3,5,2,1,4]
   ordenarPalavra(palavra) {
     const tamanhoPalavra = palavra.length;
-    let palavraArray = this.converteStringParaVetor(palavra);
+    let palavraArray = this.converterStringParaVetor(palavra);
 
     for (let posicao = 0; posicao < tamanhoPalavra - 1; posicao++) {
       let letraAtual = palavraArray[posicao];
       for (let index = posicao + 1; index < tamanhoPalavra; index++) {
-        if (palavraArray[posicao] > palavraArray[index]) {
-          palavraArray[posicao] = palavraArray[index];
+        let letraComparacao = palavraArray[index];
+        if (letraAtual > letraComparacao) {
+          palavraArray[posicao] = letraComparacao;
           palavraArray[index] = letraAtual;
-          letraAtual = palavraArray[posicao];
+          letraAtual = letraComparacao;
         }
       }
     }
@@ -92,7 +94,7 @@ class Matematica {
     return palavraArray;
   }
 
-  converteStringParaVetor(string) {
+  converterStringParaVetor(string) {
     const array = [];
     for (let posicao = 0; posicao < string.length; posicao++) {
       const letra = string[posicao];
